@@ -42,6 +42,10 @@ contract("ExerciseC6D", async (accounts) => {
         from: accounts[a],
         value: fee,
       });
+      let result = await config.exerciseC6D.getOracle.call(accounts[a]);
+      console.log(
+        `Oracle Registerred: ${result[0]()}, ${result[1]()}, ${result[2]()}`
+      );
     }
   });
 
